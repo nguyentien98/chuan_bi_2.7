@@ -54,6 +54,4 @@ gulp.task('fonts', function() {
   .pipe(gulp.dest('dist/fonts'))
 });
 
-gulp.task('build', ['sass', 'useref', 'images', 'fonts'], function(){
-	console.log('OK');
-});
+gulp.task('build', ['sass', 'useref', 'images', 'fonts']);
