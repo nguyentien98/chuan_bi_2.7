@@ -5,6 +5,7 @@
 @font-face {
   font-family: 'VarelaRound-Regular';
   src: url("../fonts/VarelaRound-Regular.ttf"); }
+
 .mobile {
   width: 540px;
   margin: auto;
@@ -116,5 +117,3 @@
 footer {
   padding-left: 25px;
   padding-right: 25px; }
-
-/*# sourceMappingURL=style.css.map */
