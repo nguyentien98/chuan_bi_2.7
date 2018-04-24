@@ -2,6 +2,19 @@
 	padding: 0;
 	margin: 0;
 }
+@mixin text($font, $size){
+	font-family: $font;
+	font-size: $size;
+}
+@mixin before($width, $height, $bgc, $top) {
+	content: '';
+	display: block;
+	position: absolute;
+	top: $top;
+	width: $width;
+	height: $height;
+	background-color: $bgc;
+}
 @font-face {
 	font-family: 'Montserrat-ExtraBold';
 	src: url('../fonts/Montserrat-ExtraBold.ttf');
@@ -22,7 +35,6 @@ body{
 }
 .container{
 	width: 1170px;
-	// position: relative;
 	margin: auto;
 }
 .row{
@@ -82,17 +94,12 @@ $maincolor: #fbcc4b;
 	right: 70px;
 	padding-right: 15px;
 }
+
 p.bd-top{
 	font-size: 19px;
 	position: relative;
 	&:before{
-		content: '';
-		display: block;
-		width: 70px;
-		height: 20px;
-		background-color: #fff;
-		position: absolute;
-		top: 0;
+		@include before(70px, 20px, #fff, 0);
 		left: 0;
 	}
 }
@@ -101,8 +108,7 @@ header{
 	background-color: #fff;
 	position: relative;
 	h1{
-		font-size: 100px;
-		font-family: 'Montserrat-ExtraBold';
+		@include text('Montserrat-ExtraBold', 100px);
 		margin-top: 90px;
 	}
 	.left-box{
@@ -118,18 +124,11 @@ header{
 		text-align: right;
 		color: $maincolor;
 		position: relative;
-		font-size: 35px;
+		@include text('Montserrat-ExtraBold', 35px);
 		margin-top: 110px;
-		font-family: 'Montserrat-ExtraBold';
 		&:after{
-			content: '';
-			display: block;
-			width: 80px;
-			height: 80px;
-			background-color: $maincolor;
-			position: absolute;
+			@include before(80px, 80px, $maincolor, 0);
 			right: -90px;
-			top: 0;
 		}
 	} 
 	.right-box{
@@ -141,12 +140,9 @@ header{
 	height: 525px;
 	position: relative;
 	.box-1_ruler{
+		@include before(410px, 20px, #b8b5b4, 0);
 		position: absolute;
-		top: 0;
 		right: 0;
-		height: 20px;
-		width: 410px;
-		background-color: #b8b5b4;
 	}
 	.left-box{
 		height: 525px;
@@ -164,8 +160,7 @@ header{
 			font-size: 49.37px;
 		}
 		h1{
-			font-size: 90px;
-			font-family: 'Montserrat-ExtraBold';
+			@include text('Montserrat-ExtraBold', 90px);
 			color: $maincolor;
 		}
 		p{
@@ -221,10 +216,9 @@ header{
 		position: initial;
 		height: 410px;
 		p{
+			@include text('Montserrat-SemiBold', 34.41px);
 			margin-top: 115px;
 			padding-top: 40px;
-			font-family: 'Montserrat-SemiBold';
-			font-size: 34.41px;
 		}
 	}
 	.right-box{
@@ -233,27 +227,20 @@ header{
 		height: 755px;
 		width: calc(100% - 340px - 20px - 50px - 70px);
 		&:before{
-			content: '';
-			display: block;
-			width: calc(100% + 75px);
-			height: 100%;
-			position: absolute;
-			background-color: rgba(21, 180, 227, 0.5);
+			@include before(calc(100% + 75px), 100%, rgba(21, 180, 227, 0.5), 0);
 			right: -75px;
 			z-index: 1;
-			top: 0;
 		}
 		.big-text{
 			text-align: right;
 			color: #FFF;
 			position: relative;
 			z-index: 2;
-			font-family: 'Montserrat-ExtraBold';
-			font-size: 90px;
+			@include text('Montserrat-ExtraBold', 90px);
 			margin-bottom: 50px;
 		}
 		p{
-			font-family: 'Montserrat-ExtraBold';
+			@include text('Montserrat-ExtraBold', 18px);
 			text-align: right;
 			position: relative;
 			margin-bottom: 30px;
