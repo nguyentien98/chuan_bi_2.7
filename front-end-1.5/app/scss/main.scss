@@ -6,7 +6,7 @@
 	font-family: $font;
 	font-size: $size;
 }
-@mixin before($width, $height, $bgc, $top) {
+@mixin common($width, $height, $bgc, $top) {
 	content: '';
 	display: block;
 	position: absolute;
@@ -99,7 +99,7 @@ p.bd-top{
 	font-size: 19px;
 	position: relative;
 	&:before{
-		@include before(70px, 20px, #fff, 0);
+		@include common(70px, 20px, #fff, 0);
 		left: 0;
 	}
 }
@@ -127,7 +127,7 @@ header{
 		@include text('Montserrat-ExtraBold', 35px);
 		margin-top: 110px;
 		&:after{
-			@include before(80px, 80px, $maincolor, 0);
+			@include common(80px, 80px, $maincolor, 0);
 			right: -90px;
 		}
 	} 
@@ -140,7 +140,7 @@ header{
 	height: 525px;
 	position: relative;
 	.box-1_ruler{
-		@include before(410px, 20px, #b8b5b4, 0);
+		@include common(410px, 20px, #b8b5b4, 0);
 		position: absolute;
 		right: 0;
 	}
@@ -227,7 +227,7 @@ header{
 		height: 755px;
 		width: calc(100% - 340px - 20px - 50px - 70px);
 		&:before{
-			@include before(calc(100% + 75px), 100%, rgba(21, 180, 227, 0.5), 0);
+			@include common(calc(100% + 75px), 100%, rgba(21, 180, 227, 0.5), 0);
 			right: -75px;
 			z-index: 1;
 		}
