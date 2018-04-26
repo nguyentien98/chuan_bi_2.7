@@ -3,6 +3,10 @@
 	font-family: 'VarelaRound-Regular';
 	src: url('../fonts/VarelaRound-Regular.ttf');
 }
+
+$bodycolor: #dfdede;
+$buttoncolor: #42b2fc;
+
 .mobile{
 	width: 540px;
 	margin: auto;
@@ -58,9 +62,9 @@
 		top: 27px;
 		button{
 			display: inline-block;
-			border: 2px solid #42b2fc;
+			border: 2px solid $buttoncolor;
 			border-radius: 5px;
-			color: #42b2fc;
+			color: $buttoncolor;
 			background: #FFF;
 			font-weight: bold;
 			text-align: center;
@@ -68,7 +72,7 @@
 			margin-right: 25px;
 			height: 35px;
 			&:hover{
-				background: #42b2fc;
+				background: $buttoncolor;
 				transition: all .2s;
 				color: #FFF;
 				cursor: pointer;
@@ -81,7 +85,7 @@
 }
 .mb-body{
 	height: 535px;
-	background-color: #dfdede;
+	background-color: $bodycolor;
 	text-align: center;
 	padding-top: 100px;
 	box-sizing: border-box;
