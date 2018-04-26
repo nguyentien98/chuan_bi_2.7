@@ -3,6 +3,12 @@
 	font-family: 'VarelaRound-Regular';
 	src: url('../fonts/VarelaRound-Regular.ttf');
 }
+@mixin bg_img($url, $repeat){
+	background-image: url($url);
+	background-repeat: $repeat;
+}
+$bodycolor: #dfdede;
+$buttoncolor: #42b2fc;
 .mobile{
 	width: 540px;
 	margin: auto;
@@ -11,8 +17,7 @@
 }
 .container{
 	font-family: 'VarelaRound-Regular';
-	background-image: url('../images/bg.png');
-	background-repeat: no-repeat;
+	@include bg_img('../images/bg.png', no-repeat);
 	padding-top: 100px;
 	background-size: 100% 100%;
 }
@@ -58,9 +63,9 @@
 		top: 27px;
 		button{
 			display: inline-block;
-			border: 2px solid #42b2fc;
+			border: 2px solid $buttoncolor;
 			border-radius: 5px;
-			color: #42b2fc;
+			color: $buttoncolor;
 			background: #FFF;
 			font-weight: bold;
 			text-align: center;
@@ -68,7 +73,7 @@
 			margin-right: 25px;
 			height: 35px;
 			&:hover{
-				background: #42b2fc;
+				background: $buttoncolor;
 				transition: all .2s;
 				color: #FFF;
 				cursor: pointer;
@@ -81,12 +86,11 @@
 }
 .mb-body{
 	height: 535px;
-	background-color: #dfdede;
+	background-color: $bodycolor;
 	text-align: center;
 	padding-top: 100px;
 	box-sizing: border-box;
-	background-image: url('../images/camera-icon.png');
-	background-repeat: no-repeat;
+	@include bg_img('../images/camera-icon.png', no-repeat);
 	background-position: center center;
 }
 .mb-reach{
